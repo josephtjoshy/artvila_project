@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLINE ENROLLMENT</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/2481f42c82.css">
+    <script>
+        function redirect()
+        {//
+            var name=document.getElementById("Name").value;
+            var date_of_birth=document.getElementById("Date_of_birth").value;
+            var email=document.getElementById("email").value;
+            var phone=document.getElementById("phone").value;
+            var courses=document.getElementById("courses").value;
+            var Country=document.getElementById("Country").value;
+            var Guardian=document.getElementById("Guardian").value;
+            var Guadian_phone=document.getElementById("Guadian_phone").value;
+            var class_time=document.getElementById("class_time").value;
+            console.log(name);
+            var formdata=new FormData();
+            formdata.append("Name",name);
+            formdata.append("Date_of_birth",date_of_birth);
+            formdata.append("email",email);
+            formdata.append("phone",phone);
+            formdata.append("courses",courses);
+            formdata.append("Country",Country);
+            formdata.append("Guardian",Guardian);
+            formdata.append("Guadian_phone",Guadian_phone);
+            formdata.append("class_time",class_time);
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("POST", "https://formspree.io/f/mknpbavb");
+            xmlHttp.send(formdata);
+            console.log(courses);
+            if(courses=='BTECH')
+            {
+                console.log("inside");
+                window.location = "https://www.tutorialspoint.com";
+            }
+            
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <!-- <li><a class="active" href="#home">Home</a></li> -->
+        <li><a href="#FB"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#insta"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="#news">Student Centre</a></li>
+        <li><a href="#news">Team</a></li>
+        <li><a href="#news">Online Live Courses</a></li>
+        <li><a href="#contact">Offline Courses</a></li>
+        <li><a href="#about">Home</a></li>
+        <li class="logo"><img
+                src="https://static.wixstatic.com/media/57bfbd_562055c91f484d5ca82f5aa63040bbf6~mv2.png/v1/fill/w_134,h_61,al_c,q_85,usm_0.66_1.00_0.01/Artville%20Logos-with%20R.webp"
+                alt="logo"></li>
+    </ul>
+    <div class="container">
+        <div class="form">
+            <h1 class="heading">Online courses enrollment form</h1>
+            <form  method="dialogue" onsubmit="event.preventDefault(); redirect()">
+                <div class="row">
+                    <div class="column"><input required type="text" size="65" id="Name" placeholder="Student Name" />
+                    </div>
+                    <div class="column"><input required placeholder="Date of Birth  " class="form-control" type="text"
+                            onfocus="(this.type='date')" onblur="(this.type='text')" id="Date_of_birth"></div>
+                </div>
+
+                <div class="row">
+                    <div class="column"><input required type="email" size="65" id="email" placeholder="E-mail" />
+                    </div>
+                    <div class="column"><input required type="number" size="65" id="phone" placeholder="Phone" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <select id="courses" required>
+                            <option value="" disabled selected>Courses</option>
+                            <option>BTECH</option>
+                            <option>BBA</option>
+                            <option>BCA</option>
+                            <option>B.COM</option>
+                        </select> </div>
+                    
+                    <div class="column"><input required type="text" size="65" id="Country" placeholder="Country" />
+                    </div>
+                </div>
+
+                <!-- <div><input class="form-control" type="email" required="" 
+                    placeholder="username" oninvalid="this.setCustomValidity('')">
+                </input></div> -->
+                <div class="row">
+
+                    <div class="column">
+                        <p class="guardian">If student is below the age of 18</p>
+                        <input type="text" size="65" id="Guardian" placeholder="Guardian's Name" />
+                    </div>
+                    <div class="column">
+                        <p class="guardian">Guardian's Contact Number</p><input type="number" size="65"
+                            id="Guadian_phone" placeholder="Guardian's Phone" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column"><select id="class_time" required>
+                            <option value="" disabled selected>Timings</option>
+                            <option>10:00-11:30pm</option>
+                            <option>12:00-01:30pm</option>
+                            <option>02:30-04.00pm</option>
+                            <option>04:30-06:00pm</option>
+                        </select> </div>
+                </div>
+
+                <br>
+                <label class="checkboxcontainer"> I accept the terms and conditions
+                    <input type="checkbox" checked="checked">
+                    <span class="checkboxcheckmark"></span>
+                </label>
+                <br>
+                <div class="row">
+                    <div class="column">
+                        <input class="submitbutton" type="submit" value="Submit" name="Submit"  /></div>
+                </div>
+        </div>
+            
+
+
+        </form>
+    </div>
+
+    </div>
+
+    <!-- footer -->
+    <div class="containerf">
+        <div class="row">
+            <div class="columnf left">
+                <div class="lil">
+                    <a href="">Home</a>
+                    <a href="">Offline Courses</a>
+                    <a href="">Online Live Courses</a>
+                    <a href="">Team</a>
+                    <a href="">Student Center</a>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="columnf middle">
+
+                <div>
+                    <p style="background-color: rgb(245, 245, 245);
+                font-size: 8px;
+                font: normal normal normal 15px/1.3em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+                padding: 15px;
+            ">Join our mailing list</p>
+                </div>
+                <style>
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        font-family: "montserrat", sans-serif;
+                    }
+
+                    .email-box i {
+                        background-color: #ff4d00;
+                        width: 40px;
+                        line-height: 30px;
+                        padding: 10px;
+                        color: aliceblue;
+                    }
+
+                    .tbox,
+                    .btn {
+                        border: none;
+                        outline: none;
+                        height: 50px;
+                    }
+
+                    .tbox {
+                        width: 20px;
+                        transition: 0.6s;
+                    }
+
+                    .email-box:hover>.tbox,
+                    .tbox:focus {
+                        width: 260px;
+                        padding: 10px;
+                    }
+
+                    .btn {
+                        background: #ff4d00;
+                        color: white;
+                        padding: 0 10px;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                    }
+                </style>
+                <div class="email-box">
+                    <i class="fa fa-envelope"></i>
+                    <input class="tbox" type="email" name="" value="" placeholder="Enter your email">
+                    <button class="btn" type="button" name="button">Subscribe</button>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="columnf right">
+                <h1 style="font-family: Arial,Helvetica,sans-serif;">Location</h1>
+                <p style="font-family: Arial,Helvetica,sans-serif;letter-spacing: 1px;">Artville Academy and Art Cafe
+
+                    314, 5th Main, HRBR layout 2nd block, Kalyan Nagar
+
+                    Bangalore - 560043</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
